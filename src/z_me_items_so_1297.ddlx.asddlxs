@@ -36,11 +36,11 @@ annotate view Z_C_ITEMS_SOR_1297 with
   @UI: {
       lineItem        : [{ position: 30, importance: #HIGH }],
       identification  : [{ position: 30, label: 'Release Date' }]}
-  ReleaseDate;
+  Releasedate;
   @UI: {
       lineItem        : [{ position: 40, importance: #HIGH }],
       identification  : [{ position: 40, label: 'Discontinued Date' }]}
-  DiscontinuedDate;
+  Discontinueddate;
   @UI: {
       lineItem        : [{ position: 50, importance: #HIGH }],
       identification  : [{ position: 50, label: 'Price' }]}
@@ -48,8 +48,8 @@ annotate view Z_C_ITEMS_SOR_1297 with
 //   @UI: {
 //      lineItem        : [{ position: 60, importance: #HIGH }],
 //      identification  : [{ position: 60, label: 'Price' }]}
-//  @Consumption.valueHelpDefinition: [{entity: {name: 'I_Currency', element: 'Currency' }}]
-//  Currency;
+  @Consumption.valueHelpDefinition: [{entity: {name: 'I_Currency', element: 'Currency' }}]
+  Currency;
   @UI: {
       lineItem        : [{ position: 70, importance: #HIGH }],
       identification  : [{ position: 70, label: 'Height' }]}
@@ -70,6 +70,6 @@ annotate view Z_C_ITEMS_SOR_1297 with
 //      lineItem        : [{ position: 110, importance: #HIGH }],
 //      identification  : [{ position: 110, label: 'UnitOfMeasure' }]}
       @Consumption.valueHelpDefinition: [{entity: {name: 'I_UnitOfMeasure', element: 'UnitOfMeasure' }}]
-  UnitOfMeasure;
+  Unitofmeasure;
 
 }

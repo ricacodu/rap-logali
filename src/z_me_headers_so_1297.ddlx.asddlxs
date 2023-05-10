@@ -4,6 +4,7 @@
     headerInfo: {
         typeName: 'Sales Order',
         typeNamePlural: 'Sales Orders',
+        imageUrl: 'LogoURL',
         title: {
             type: #STANDARD,                    
             value: 'Idheader'                       
