@@ -1,0 +1,53 @@
+managed implementation in class zbp_i_root__1297 unique;
+//strict ( 1 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for Z_I_root__1297 alias Headers
+persistent table zheaders_so_1297
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+// Mandatory fields that are required to create a Sales Order
+  field ( mandatory ) idheader, email;
+
+// Dinamic field control
+  field ( features : instance ) idheader;
+
+  create;
+  update;
+  delete;
+
+ // Validations
+  validation validateDates on save { field createon, deliverydate; }
+  validation validateStatusOrder on save { field Orderstatus; }
+
+  association _Items { create; }
+
+  mapping for zheaders_so_1297 corresponding;
+}
+
+
+
+define behavior for Z_I_ITEMS_SOR_1297 alias Items
+persistent table zitems_so_1297
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+
+// Mandatory fields that are required to create a Sales Order
+  field ( mandatory ) id;
+
+  update;
+  delete;
+
+// Read only
+  field ( readonly ) IdHeader;
+
+// Validations
+validation validateDates on save { field releasedate, discontinueddate; }
+
+  association _Header;
+
+  mapping for zitems_so_1297 corresponding;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition'
+define service Zsd_root_sor_1297 {
+  expose Z_C_root_so_1297 as Root;
+  expose Z_C_ITEMS_SOR_1297 as Items;
+}

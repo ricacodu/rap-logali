@@ -1,0 +1,72 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {    
+    headerInfo: {
+        typeName: 'Sales Order',
+        typeNamePlural: 'Sales Orders',
+        title: {
+            type: #STANDARD,                    
+            value: 'Idheader'                       
+        }
+    }    
+}
+annotate view Z_C_root_so_1297 with
+{
+  @UI.facet: [{ id        : 'SalesOrder',
+               purpose   : #STANDARD,
+               type      : #IDENTIFICATION_REFERENCE,
+               label     : 'Sales Order Header',
+               position  : 10 },
+             { id            : 'Items',
+               purpose       : #STANDARD,
+               type          : #LINEITEM_REFERENCE,
+               label         : 'Sales Order Items',
+               position      : 20,
+               targetElement : '_Items'
+               
+        }
+       ]              
+  @UI: {   
+      lineItem        : [{ position: 10, importance: #HIGH }],
+      identification  : [{ position: 10, label: 'Sales Order Id' }]}
+
+  Idheader;
+                  
+  @UI: {
+  lineItem        : [{ position: 20, importance: #HIGH }],
+  identification  : [{ position: 20, label: 'Email' }]}
+  Email;
+  @Search.defaultSearchElement: true
+  @UI: {
+      lineItem        : [{ position: 30, importance: #HIGH }],
+      identification  : [{ position: 30, label: 'First Name' }]}
+  Firstname;
+  @UI: {
+      lineItem        : [{ position: 40, importance: #HIGH }],
+      identification  : [{ position: 40, label: 'Last Name' }]}
+  Lastname;
+  @UI: {
+      lineItem        : [{ position: 50, importance: #HIGH }],
+      identification  : [{ position: 50, label: 'Country' }]}
+  Country;
+  @UI: {
+      lineItem        : [{ position: 60, importance: #HIGH }],
+      identification  : [{ position: 60, label: 'Created On' }]}
+  Createon;
+  @UI: {
+      lineItem        : [{ position: 70, importance: #HIGH }],
+      identification  : [{ position: 70, label: 'Delivery Date' }]}
+  Deliverydate;
+  @UI: {
+       lineItem        : [{ position: 80, importance: #HIGH, criticality: 'Orderstatus'},
+                          { position: 15, importance: #HIGH, type: #FOR_ACTION, dataAction: 'cancelOrder', label: 'Cancel Order'}],
+//                          { position: 90, importance: #HIGH, label: 'Image', value: 'ImageURL'}],
+       identification  : [{ position: 80, label: 'Order Status', criticality: 'Orderstatus'},
+                          { position: 15 ,  type: #FOR_ACTION, dataAction: 'cancelOrder', label: 'Cancel Order' }]
+//                          { position: 90, label: 'Image', value: 'ImageURL'  }]                           
+       }
+  @UI.textArrangement: #TEXT_ONLY  
+  Orderstatus;
+  @UI.hidden: true      
+  Imageurl;
+}
