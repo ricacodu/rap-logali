@@ -7,5 +7,16 @@ define behavior for Z_C_root_so_1297 alias SalesOrdersProceso
   use update;
   use delete;
 
+  use action cancelOrder;
+
   use association _Items { create;  }
+}
+
+
+define behavior for Z_C_ITEMS_SOR_1297 alias SalesOrderItems
+{
+  use update;
+  use delete;
+
+  use association _Header;
 }

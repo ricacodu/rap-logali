@@ -7,8 +7,12 @@ lock master
 authorization master ( instance )
 //etag master <field_name>
 {
+
+  //fields: read only
+  field ( readonly ) StatusText, logourl;
+
 // Mandatory fields that are required to create a Sales Order
-  field ( mandatory ) idheader, email;
+  field ( mandatory : create ) idheader, email;
 
 // Dinamic field control
   field ( features : instance ) idheader;
@@ -17,11 +21,14 @@ authorization master ( instance )
   update;
   delete;
 
+  //actions
+  action (features : instance) cancelOrder result[1] $self;
+
  // Validations
   validation validateDates on save { field createon, deliverydate; }
   validation validateStatusOrder on save { field Orderstatus; }
 
-  association _Items { create; }
+  association _Items { create  ( features : instance ); }
 
   mapping for zheaders_so_1297 corresponding;
 }
@@ -35,14 +42,15 @@ authorization dependent by _Header
 //etag master <field_name>
 {
 
+  //fields: read only
+  field ( readonly ) IdHeader;
+
 // Mandatory fields that are required to create a Sales Order
-  field ( mandatory ) id;
+  field ( mandatory : create) id;
+  field ( features:instance ) id;
 
   update;
   delete;
-
-// Read only
-  field ( readonly ) IdHeader;
 
 // Validations
 validation validateDates on save { field releasedate, discontinueddate; }

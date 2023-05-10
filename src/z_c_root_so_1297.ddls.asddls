@@ -12,8 +12,12 @@ define root view entity Z_C_root_so_1297
       Createon,
       Deliverydate,
       Orderstatus,
+      StatusText   as StatusText,     
+      @Semantics.imageUrl: true    
+      LogoURL      as LogoURL,
+      @Semantics.imageUrl: true
       Imageurl,
       /* Associations */
-      _Items
+      _Items : redirected to composition child Z_C_ITEMS_SOR_1297
 
 }
