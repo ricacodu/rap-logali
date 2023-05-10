@@ -98,61 +98,61 @@ CLASS zcl_insert_data_1297 IMPLEMENTATION.
 *    *   Emily    Alexander   e.alexander@randatmail.com
         lv_firstname = 'Emily'.
         lv_lastname = 'Alexander'.
-        lv_email = 'e.alexander@randatmail.com'.
+        lv_email = 'e.alexander@gmail.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Logo_Elektro.png'.
       WHEN 2.
 *    *'Brad'    'Adams'   'b.adams@randatmail.com'
         lv_firstname = 'Brad'.
         lv_lastname = 'Adams'.
-        lv_email = 'b.adams@randatmail.com'.
+        lv_email = 'b.adams@gmail.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/5/56/Logo-Promorar.png'.
       WHEN 3.
 *    *Naomi   Foster  n.foster@randatmail.com
         lv_firstname = 'Naomi'.
         lv_lastname = 'Foster'.
-        lv_email = 'n.foster@randatmail.com'.
+        lv_email = 'n.foster@gmail.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/7/76/Logo_qdqmedia.png'.
       WHEN 4.
 *    *Ada Carroll a.carroll@randatmail.com
         lv_firstname = 'Ada'.
         lv_lastname = 'Carroll'.
-        lv_email = 'a.carroll@randatmail.com'.
+        lv_email = 'a.carroll@hotmail.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/0/05/Logo_EPM.png'.
       WHEN 5.
 *    *Charlotte   Evans   c.evans@randatmail.com
         lv_firstname = 'Charlotte'.
         lv_lastname = 'Evans'.
-        lv_email = 'c.evans@randatmail.com'.
+        lv_email = 'c.evans@hotmail.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Logo_Empresa_Nacional_de_Telecomunicaciones_-_TELECOM.png'.
       WHEN 6.
 *    *Adam    Montgomery  a.montgomery@randatmail.com
         lv_firstname = 'Adam'.
         lv_lastname = 'Montgomery'.
-        lv_email = 'a.montgomery@randatmail.com'.
+        lv_email = 'a.montgomery@gmail.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Logo-de-la-empresa-EDESA.jpg'.
       WHEN 7.
 *    *Justin  Stewart j.stewart@randatmail.com
         lv_firstname = 'Justin'.
         lv_lastname = 'Stewart'.
-        lv_email = 'j.stewart@randatmail.com'.
+        lv_email = 'j.stewart@gmail.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Wipe_Out_Kids%27_Cancer_%28logo%29.jpg'.
       WHEN 8.
 *    *Dale    Moore   d.moore@randatmail.com
         lv_firstname = 'Dale'.
         lv_lastname = 'Moore'.
-        lv_email = 'd.moore@randatmail.com'.
+        lv_email = 'd.moore@gmail.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/e/ed/LOGO_NOVA_PNG.png'.
       WHEN 9.
 *    *Caroline    Phillips    c.phillips@randatmail.com
         lv_firstname = 'Caroline'.
         lv_lastname = 'Phillips'.
-        lv_email = 'c.phillips@randatmail.com'.
+        lv_email = 'c.phillips@yahoo.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/3/31/Logo_ULM.png'.
       WHEN 10.
 *    *Paige   Ross    p.ross@randatmail.com
         lv_firstname = 'Paige'.
         lv_lastname = 'Ross'.
-        lv_email = 'p.ross@randatmail.com'.
+        lv_email = 'p.ross@yahoo.com'.
         lv_IMAGEURL = 'https://upload.wikimedia.org/wikipedia/commons/d/df/LOGO-SABA-BRAND.png'.
       WHEN OTHERS.
         DATA lv_char(2).
@@ -294,7 +294,7 @@ METHOD randomize_items.
         <item>-releasedate = get_random_date( sy-index ).
         <item>-discontinueddate  = get_random_date( 90 ).
         <item>-price = sy-index * 100.
-        "<item>-currencycode = 'USD'.
+        <item>-currencycode = 'USD'.
         <item>-height = 30 + 5 * sy-index.
         <item>-width = 20 + 5 * sy-index.
         <item>-depth = 10 + 5 * sy-index.
